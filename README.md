@@ -1,4 +1,4 @@
-![image](https://github.com/InfestedStudios/InfestedCrafting/assets/42579059/e6334d45-52fd-4204-9a35-2f7494eff0aa)
+![image](https://github.com/InfestedStudios/InfestedCrafting/assets/42579059/3da18eb4-6c8e-4f2d-b477-82585ed35b83)
 
 # InfestedCrafting
 
