@@ -16,29 +16,24 @@ import org.infestedstudios.crafting.struct.*;
 import org.infestedstudios.crafting.struct.CraftingRecipe;
 import org.infestedstudios.crafting.utils.CraftingUtil;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+
+
+
 
 /**
  * Main API class for interacting with crafting recipes.
  */
-import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.plugin.Plugin;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+/**
+ * @Temper - Need to test every recipe and make some complex recipes.
+ */
 
 public class CraftingAPI {
     private static RecipeManager recipeManager = new RecipeManagerImpl();
