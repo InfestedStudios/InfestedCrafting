@@ -1,0 +1,4 @@
+name: InfestedCrafting
+version: '${version}'
+main: org.infestedstudios.crafting.CraftingAPI
+api-version: '1.13'
