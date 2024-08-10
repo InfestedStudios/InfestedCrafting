@@ -21,9 +21,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@dbbdc275be76ac10734476cc723d82dfe7ec6eda
-
     - name: Build with Gradle Wrapper
       run: ./gradlew build
 
@@ -42,16 +39,9 @@ jobs:
         distribution: 'temurin'
 
     - name: Generate and submit dependency graph
-      uses: gradle/actions/dependency-submission@dbbdc275be76ac10734476cc723d82dfe7ec6eda
+      run: ./gradlew dependencies --configuration runtimeClasspath | tee dependency-graph.txt
+    - name: Upload dependency graph
+      uses: actions/upload-artifact@v3
       with:
-        gradle-version: '8.7'  # Specify the Gradle version here
-
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v4.3.6
-      with:
-        name: my-artifact # Set the artifact name (optional)
-        path: build/libs # Path to the artifact, adjust accordingly
-        if-no-files-found: warn # Set behavior if no files are found (optional)
-        retention-days: 30 # Set retention duration (optional)
-        compression-level: 6 # Set compression level (optional)
-        overwrite: false # Set overwrite behavior (optional)
+        name: dependency-graph
+        path: dependency-graph.txt
