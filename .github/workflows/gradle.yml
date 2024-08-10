@@ -21,6 +21,9 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle Wrapper
         run: ./gradlew build
 
@@ -38,8 +41,12 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
       - name: Generate and submit dependency graph
         run: ./gradlew dependencies --configuration runtimeClasspath | tee dependency-graph.txt
+
       - name: Upload dependency graph
         uses: actions/upload-artifact@v3
         with:
