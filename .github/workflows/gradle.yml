@@ -44,7 +44,7 @@ jobs:
     - name: Generate and submit dependency graph
       uses: gradle/actions/dependency-submission@dbbdc275be76ac10734476cc723d82dfe7ec6eda
       with:
-        gradle-version: '8.1'  # Specify the Gradle version here
+        gradle-version: '8.9'  # Specify the Gradle version here
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.3.6
