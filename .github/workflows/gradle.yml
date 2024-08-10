@@ -25,17 +25,17 @@ jobs:
         id: get_latest_tag
         run: |
           git fetch --tags
-          TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          TAG=$(git describe --tags $(git rev-list --tags --max-count=1) || echo "v0.0.0")
           echo "Latest Tag: $TAG"
           echo ::set-output name=tag::$TAG
 
       - name: Increment Version
         id: increment_version
         run: |
-          if [ -z "${{ steps.get_latest_tag.outputs.tag }}" ]; then
+          TAG=${{ steps.get_latest_tag.outputs.tag }}
+          if [ "$TAG" = "v0.0.0" ]; then
             NEW_TAG="v0.1.0"
           else
-            TAG=${{ steps.get_latest_tag.outputs.tag }}
             IFS='.' read -r -a VERSION <<< "${TAG#v}"
             NEW_TAG="v${VERSION[0]}.${VERSION[1]}.$((${VERSION[2]}+1))"
           fi
