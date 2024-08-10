@@ -57,6 +57,9 @@ jobs:
           git push origin ${{ steps.increment_version.outputs.new_tag }}
           git push origin master
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle Wrapper
         run: ./gradlew build
 
