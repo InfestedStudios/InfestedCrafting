@@ -13,9 +13,9 @@ import java.util.Optional;
 public class LargeScaleCustomGuiRecipeExample {
     public static void createLargeScaleCustomGuiRecipe() {
         // Define ingredients and results
-        Ingredient border = new Ingredient(XMaterial.STONE, 1);
-        Ingredient diamond = new Ingredient(XMaterial.DIAMOND, 1);
-        Ingredient netherStar = new Ingredient(XMaterial.NETHER_STAR, 1);
+        Ingredient border = new Ingredient(XMaterial.STONE, 1, Optional.of(11111));
+        Ingredient diamond = new Ingredient(XMaterial.DIAMOND, 1, Optional.of(11111));
+        Ingredient netherStar = new Ingredient(XMaterial.NETHER_STAR, 1, Optional.of(11111));
         ItemStack ultimateWeapon = new ItemStack(XMaterial.NETHERITE_SWORD, 1, Optional.of(11111)); // Custom model data for the ultimate weapon
 
         // Create the large-scale custom GUI recipe
